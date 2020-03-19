@@ -1,0 +1,7 @@
+FROM alpine-java11:base
+MAINTAINER James Bray <james_r_bray@hotmail.com>
+COPY passenger-checkin-demo-0.0.1-SNAPSHOT.jar /opt/passenger-checkin/lib/
+ENV SPRING_APPLICATION_JSON='{"server": {"port": 8080}}'
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/opt/passenger-checkin/lib/passenger-checkin-demo-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
