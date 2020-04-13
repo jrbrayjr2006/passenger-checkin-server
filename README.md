@@ -7,6 +7,8 @@ The purpose of this application is to be an artifact for deployment to a kuberne
 
 The entry points for the application are two RESTful endpoints
 
+- home `/`
+- heartbeat `/heartbeat`
 - The greeting `/welcome`
 - The checkin `/checkin`
 
@@ -26,7 +28,7 @@ Create the final image
 docker build --file=Dockerfile.server --tag=passenger-checkin-server:latest --rm=true .
 ```
 
-Login to your an accessible docker repository if applicable or use a local repository.  Create a public or accessible private repository and tag the imnage
+Login to your an accessible docker repository if applicable or use a local repository.  Create a public or accessible private repository and tag the image
 
 ```cmd
 docker image ls
