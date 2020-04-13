@@ -47,7 +47,7 @@ class PassengerCheckinControllerTest {
 
     @Test
     @DisplayName("When a welcome request is made, then should call the PassengerCheckinService")
-    void shouldInvokeRassengerService() throws Exception {
+    void shouldInvokePassengerService() throws Exception {
         // Given
         String passenger = "Some Passenger";
 
@@ -56,5 +56,17 @@ class PassengerCheckinControllerTest {
 
         // Then
         verify(mockPassengerCheckinService).getGreeting(passenger);
+    }
+
+    @Test
+    @DisplayName("When a GET request is made, then should return ok and response")
+    void shouldProvideHeartbeatResponse() throws Exception {
+        // Given
+        String endpoint = "/heartbeat";
+
+        // When
+        mockMvc.perform(get(endpoint)).andExpect(status().isOk());
+
+        // Then
     }
 }
